@@ -1,0 +1,28 @@
+/* Desktop-specific styles */
+@media screen and (min-width: 769px) {
+
+    /* Enhanced animations for desktop */
+    .text-animate {
+        transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    /* More elaborate parallax effect */
+    .parallax-layer {
+        transition: transform 0.1s ease-out;
+    }
+
+    /* Desktop-specific hover effects */
+    .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .skill-item:hover {
+        transform: translateY(-5px) scale(1.05);
+    }
+
+    /* Enhanced smoke effect */
+    .smoke-effect {
+        filter: blur(80px);
+    }
+}

@@ -1,0 +1,65 @@
+/* Mobile-specific styles */
+@media screen and (max-width: 768px) {
+    :root {
+        --section-padding: 70px 20px;
+    }
+
+    /* Adjusted typography */
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    /* Simplified animations for better performance */
+    .smoke-effect {
+        filter: blur(40px);
+        animation-duration: 30s;
+    }
+
+    /* Hero section adjustments */
+    .hero-content {
+        padding: 0 20px;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+    }
+
+    /* About section adjustments */
+    .about-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .about-image {
+        width: 80%;
+        max-width: 250px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Gallery section adjustments */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .item-image {
+        height: 150px;
+    }
+
+    /* Contact section adjustments */
+    .contact-methods {
+        flex-direction: column;
+    }
+
+    .contact-method {
+        width: 100%;
+        padding: 20px;
+    }
+}

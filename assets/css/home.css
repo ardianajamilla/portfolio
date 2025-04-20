@@ -1,0 +1,237 @@
+/* Hero Section Styles */
+#home {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: var(--header-height);
+    position: relative;
+}
+
+.hero-content {
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    position: relative;
+    display: inline-block;
+}
+
+.hero-title span {
+    transition-delay: calc(0.1s * var(--i));
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    color: var(--accent-color);
+}
+
+.cta-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* Parallax Elements */
+.parallax-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.parallax-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    pointer-events: none;
+}
+
+.parallax-layer:nth-child(1) {
+    background-image: radial-gradient(circle at 20% 35%, var(--smoke-color-2) 0%, transparent 40%);
+}
+
+.parallax-layer:nth-child(2) {
+    background-image: radial-gradient(circle at 70% 65%, var(--smoke-color-1) 0%, transparent 40%);
+}
+
+.parallax-layer:nth-child(3) {
+    background-image: radial-gradient(circle at 40% 50%, var(--smoke-color-2) 0%, transparent 30%);
+}
+
+/* Highlights Section Styles */
+#highlights {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: relative;
+    padding: 100px 5%;
+}
+
+#highlights::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 30% 70%, var(--smoke-color-2) 0%, transparent 40%),
+        radial-gradient(circle at 70% 30%, var(--smoke-color-1) 0%, transparent 40%);
+    filter: blur(40px);
+    z-index: -1;
+}
+
+.highlights-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.highlight-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    padding: 40px 30px;
+    text-align: center;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    transition: all var(--transition-medium);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.highlight-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.highlight-card:hover::after {
+    transform: translateX(100%);
+}
+
+.highlight-icon {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 25px;
+    transition: transform var(--transition-medium);
+    display: inline-block;
+    position: relative;
+}
+
+.highlight-icon::before {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: all var(--transition-medium);
+}
+
+.highlight-card:hover .highlight-icon {
+    transform: scale(1.2);
+}
+
+.highlight-card:hover .highlight-icon::before {
+    width: 80px;
+    height: 80px;
+    opacity: 0.8;
+}
+
+.highlight-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.highlight-card h3::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--secondary-color);
+    transition: width var(--transition-medium);
+}
+
+.highlight-card:hover h3::after {
+    width: 80%;
+}
+
+.highlight-card p {
+    color: var(--accent-color);
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+.cta-center {
+    text-align: center;
+    margin-top: 60px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .highlight-card {
+        min-width: 100%;
+        padding: 30px 25px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-title {
+        font-size: 2.8rem;
+    }
+
+    #highlights {
+        padding: 70px 5%;
+    }
+}

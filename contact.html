@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Ibraheem Portfolio</title>
+
+    <!-- Base Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Component Specific Styles -->
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+
+    <!-- Device Specific Styles (loaded dynamically via JS) -->
+    <link rel="stylesheet" id="device-css" href="">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- Smoke Background Effect -->
+    <div class="smoke-container">
+        <div class="smoke-effect"></div>
+    </div>
+
+    <!-- Navigation -->
+    <header id="header">
+        <div class="logo">
+            <a href="index.html">Ibraheem</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Page Title -->
+    <div class="page-title">
+        <h1>Get In Touch</h1>
+        <div class="section-divider"></div>
+        <p class="page-description">Interested in my products or have a project in mind? Reach out through any of these
+            platforms.</p>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="contact-grid">
+            <!-- Contact Methods -->
+            <div class="contact-methods">
+                <h2>Connect With Me</h2>
+
+                <div class="contact-cards">
+                    <div class="contact-card" data-aos="fade-up">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h3>GitHub</h3>
+                            <p>Check out my latest projects and contributions</p>
+                            <a href="https://github.com/ibrayoga0" target="_blank" class="contact-link">ibrayoga0</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="contact-icon">
+                            <i class="fab fa-discord"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h3>Discord</h3>
+                            <p>Chat with me directly on Discord</p>
+                            <div class="contact-link discord-username">bangibraheem</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h3>WhatsApp</h3>
+                            <p>Direct messaging for quick responses</p>
+                            <a href="https://wa.me/6283142615307" target="_blank" class="contact-link">+62
+                                831-4261-5307</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-container">
+                <h2>Send Me a Message</h2>
+
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                        <div class="form-line"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                        <div class="form-line"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                        <div class="form-line"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <div class="form-line"></div>
+                    </div>
+
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+
+                <div class="form-success-message">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Message Sent!</h3>
+                    <p>Thank you for reaching out. I'll get back to you soon.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="products.html">Products</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/ibrayoga0" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" class="discord-icon"><i class="fab fa-discord"></i></a>
+                <a href="https://wa.me/6283142615307" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="copyright">&copy; 2025 Ibraheem. All rights reserved.</p>
+            <p class="date-info">Last updated: 2025-04-20</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/device-detection.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
