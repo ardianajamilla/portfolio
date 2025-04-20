@@ -12,9 +12,14 @@
     <!-- Component Specific Styles -->
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/about.css">
+    <link rel="stylesheet" href="assets/css/status-bar.css">
+    <link rel="stylesheet" href="assets/css/hex-skills.css">
 
     <!-- Preloader Animation-->
     <link rel="stylesheet" href="assets/css/preloader.css">
+
+    <!-- Timeline Animation-->
+    <link rel="stylesheet" href="assets/css/timeline.css">
 
     <!-- Device Specific Styles (loaded dynamically via JS) -->
     <link rel="stylesheet" id="device-css" href="">
@@ -113,149 +118,327 @@
             </div>
         </div>
 
-        <!-- Skills Section (Enhanced) -->
-        <div class="skills-section">
-            <h2 class="section-title">My Skills</h2>
-            <div class="section-divider"></div>
+        <!-- About Timeline Section -->
+        <section id="about-timeline" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>My Journey</h2>
+                    <div class="title-bar"></div>
+                </div>
 
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Programming Languages</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item" data-aos="zoom-in">
-                            <div class="skill-icon">
-                                <i class="fab fa-html5"></i>
-                            </div>
-                            <span>HTML5</span>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 90%"></div>
-                            </div>
-                        </div>
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
 
-                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="50">
-                            <div class="skill-icon">
-                                <i class="fab fa-css3-alt"></i>
-                            </div>
-                            <span>CSS3</span>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 85%"></div>
-                            </div>
-                        </div>
-
-                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="skill-icon">
-                                <i class="fab fa-js"></i>
-                            </div>
-                            <span>JavaScript</span>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 80%"></div>
-                            </div>
-                        </div>
-
-                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="150">
-                            <div class="skill-icon">
-                                <i class="fab fa-cuttlefish"></i>
-                            </div>
-                            <span>C#</span>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 75%"></div>
-                            </div>
-                        </div>
-
-                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="200">
-                            <div class="skill-icon">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <span>LUA</span>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 95%"></div>
+                    <div class="timeline-item" data-year="2010">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>The Beginning</h3>
+                            <p>My journey with computers began thanks to my father, who is highly skilled in this field.
+                                He introduced me to computers at a young age and began teaching me everything he knew.
+                            </p>
+                            <div class="timeline-img">
+                                <div class="img-placeholder">
+                                    <i class="fas fa-desktop"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="skill-category">
-                    <h3>Development & Design</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="250">
-                            <div class="skill-icon">
-                                <i class="fas fa-laptop-code"></i>
-                            </div>
-                            <span>Web Design</span>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 85%"></div>
+                    <div class="timeline-item" data-year="2013">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content right">
+                            <h3>Growing Passion</h3>
+                            <p>I developed an intense passion for computers, often spending hours or even entire days
+                                immersed in the digital world. While I occasionally hung out with friends, my true love
+                                was exploring what computers could do.</p>
+                            <div class="timeline-img">
+                                <div class="img-placeholder">
+                                    <i class="fas fa-laptop-code"></i>
+                                </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="300">
-                            <div class="skill-icon">
-                                <i class="fas fa-gamepad"></i>
-                            </div>
-                            <span>Game Modding</span>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 90%"></div>
+                    <div class="timeline-item" data-year="2016">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>First Coding Projects</h3>
+                            <p>I began creating my first programming projects, discovering the power of turning ideas
+                                into functional code. This period marked the beginning of my journey as a developer.</p>
+                            <div class="timeline-img">
+                                <div class="img-placeholder">
+                                    <i class="fas fa-code"></i>
+                                </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="350">
-                            <div class="skill-icon">
-                                <i class="fas fa-mobile-alt"></i>
-                            </div>
-                            <span>Responsive Design</span>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 80%"></div>
+                    <div class="timeline-item" data-year="2019">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content right">
+                            <h3>Expanding Knowledge</h3>
+                            <p>I dedicated myself to learning multiple programming languages including HTML, CSS,
+                                JavaScript, PHP, C#, and LUA. While I'm not completely fluent in all of them yet, I've
+                                developed proficiency across the board.</p>
+                            <div class="timeline-img">
+                                <div class="img-placeholder">
+                                    <i class="fas fa-brain"></i>
+                                </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="400">
-                            <div class="skill-icon">
-                                <i class="fas fa-database"></i>
-                            </div>
-                            <span>Database</span>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 70%"></div>
+                    <div class="timeline-item" data-year="2022">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Creating & Selling Scripts</h3>
+                            <p>I began creating LUA cheat scripts for GTA San Andreas, some of which I sell while others
+                                I share freely with the community. This venture allowed me to combine my programming
+                                skills with my gaming interests.</p>
+                            <div class="timeline-img">
+                                <div class="img-placeholder">
+                                    <i class="fas fa-gamepad"></i>
+                                </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="450">
-                            <div class="skill-icon">
-                                <i class="fas fa-server"></i>
-                            </div>
-                            <span>Server Management</span>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 75%"></div>
+                    <div class="timeline-item" data-year="2025">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content right">
+                            <h3>Today & Beyond</h3>
+                            <p>Today, I continue to expand my knowledge and skills. My name is Ibraheem (though my real
+                                name is Ibra), and I'm passionate about coding, creating, and continuous learning in the
+                                ever-evolving tech landscape.</p>
+                            <div class="timeline-img">
+                                <div class="img-placeholder">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="products.html">Products</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="social-links">
-                <a href="https://github.com/ibrayoga0" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="#" class="discord-icon"><i class="fab fa-discord"></i></a>
-                <a href="https://wa.me/6283142615307" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            </div>
-            <p class="copyright">&copy; 2025 Ibraheem. All rights reserved.</p>
-            <!-- <p class="date-info">Last updated: 2025-04-20</p> -->
-        </div>
-    </footer>
+        <!-- New Skills Section -->
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>My Skills</h2>
+                    <div class="title-bar"></div>
+                </div>
 
-    <!-- Scripts -->
-    <script src="assets/js/device-detection.js"></script>
-    <script src="assets/js/animations.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/preloader.js"></script>
+                <div class="hex-skills-container">
+                    <div class="hex-background"></div>
+
+                    <!-- Programming Languages -->
+                    <div class="hex-skill-group">
+                        <div class="hex-group-title">
+                            <span>Programming Languages</span>
+                        </div>
+
+                        <div class="hex-grid">
+                            <div class="hex-skill" data-level="95">
+                                <div class="hex-outer">
+                                    <div class="hex-inner">
+                                        <i class="fab fa-html5"></i>
+                                        <div class="hex-content">
+                                            <span class="skill-name">HTML</span>
+                                            <span class="skill-level">Expert</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hex-skill" data-level="90">
+                                <div class="hex-outer">
+                                    <div class="hex-inner">
+                                        <i class="fab fa-css3-alt"></i>
+                                        <div class="hex-content">
+                                            <span class="skill-name">CSS</span>
+                                            <span class="skill-level">Expert</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hex-skill" data-level="85">
+                                <div class="hex-outer">
+                                    <div class="hex-inner">
+                                        <i class="fab fa-js-square"></i>
+                                        <div class="hex-content">
+                                            <span class="skill-name">JavaScript</span>
+                                            <span class="skill-level">Advanced</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hex-skill" data-level="80">
+                                <div class="hex-outer">
+                                    <div class="hex-inner">
+                                        <i class="fab fa-php"></i>
+                                        <div class="hex-content">
+                                            <span class="skill-name">PHP</span>
+                                            <span class="skill-level">Advanced</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hex-skill" data-level="75">
+                                <div class="hex-outer">
+                                    <div class="hex-inner">
+                                        <i class="fab fa-microsoft"></i>
+                                        <div class="hex-content">
+                                            <span class="skill-name">C#</span>
+                                            <span class="skill-level">Proficient</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hex-skill" data-level="70">
+                                <div class="hex-outer">
+                                    <div class="hex-inner">
+                                        <i class="fas fa-code"></i>
+                                        <div class="hex-content">
+                                            <span class="skill-name">C++</span>
+                                            <span class="skill-level">Proficient</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Specialized Skills -->
+                    <div class="hex-skill-group">
+                        <div class="hex-group-title">
+                            <span>Specialized Skills</span>
+                        </div>
+
+                        <div class="hex-grid">
+                            <div class="hex-skill" data-level="85">
+                                <div class="hex-outer">
+                                    <div class="hex-inner">
+                                        <i class="fas fa-gamepad"></i>
+                                        <div class="hex-content">
+                                            <span class="skill-name">LUA</span>
+                                            <span class="skill-level">Advanced</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hex-skill" data-level="75">
+                                <div class="hex-outer">
+                                    <div class="hex-inner">
+                                        <i class="fas fa-pencil-ruler"></i>
+                                        <div class="hex-content">
+                                            <span class="skill-name">UI/UX</span>
+                                            <span class="skill-level">Proficient</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hex-skill" data-level="90">
+                                <div class="hex-outer">
+                                    <div class="hex-inner">
+                                        <i class="fas fa-brain"></i>
+                                        <div class="hex-content">
+                                            <span class="skill-name">Problem Solving</span>
+                                            <span class="skill-level">Expert</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-legend">
+                        <div class="legend-item">
+                            <span class="legend-dot beginner"></span>
+                            <span class="legend-text">Beginner (0-50%)</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot proficient"></span>
+                            <span class="legend-text">Proficient (51-75%)</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot advanced"></span>
+                            <span class="legend-text">Advanced (76-85%)</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot expert"></span>
+                            <span class="legend-text">Expert (86-100%)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Status Bar with Auto-Slider (Icons Only) -->
+        <div class="status-bar">
+            <div class="icon-slider-container">
+                <div class="icon-slider">
+                    <div class="icon-slide">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <div class="icon-slide">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <div class="icon-slide">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <div class="icon-slide">
+                        <i class="fab fa-php"></i>
+                    </div>
+                    <div class="icon-slide">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div class="icon-slide">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <div class="icon-slide">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="icon-slide">
+                        <i class="fab fa-laravel"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="products.html">Products</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/ibrayoga0" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" class="discord-icon"><i class="fab fa-discord"></i></a>
+                    <a href="https://wa.me/6283142615307" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <p class="copyright">&copy; 2025 Ibraheem. All rights reserved.</p>
+                <!-- <p class="date-info">Last updated: 2025-04-20</p> -->
+            </div>
+        </footer>
+
+        <!-- Scripts -->
+        <script src="assets/js/device-detection.js"></script>
+        <script src="assets/js/animations.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/preloader.js"></script>
+        <script src="assets/js/timeline-animations.js"></script>
+        <script src="assets/js/status-bar.js"></script>
+        <script src="assets/js/hex-skills.js"></script>
 </body>
 
 </html>

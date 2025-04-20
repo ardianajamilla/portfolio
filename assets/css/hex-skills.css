@@ -1,0 +1,408 @@
+/* Hexagonal Skills Grid Layout */
+#skills {
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#skills::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse at 30% 30%, var(--smoke-color-1) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 70%, var(--smoke-color-2) 0%, transparent 50%);
+    filter: blur(60px);
+    z-index: -1;
+}
+
+.hex-skills-container {
+    max-width: 1200px;
+    margin: 60px auto 0;
+    position: relative;
+}
+
+.hex-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Skill Group Styling */
+.hex-skill-group {
+    margin-bottom: 60px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.hex-skill-group.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hex-group-title {
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+}
+
+.hex-group-title span {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.hex-group-title span::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg,
+            var(--secondary-color),
+            transparent);
+}
+
+/* Hexagonal Grid Layout */
+.hex-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Hexagon Shape & Structure */
+.hex-skill {
+    position: relative;
+    width: 150px;
+    height: 170px;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.hex-skill.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.hex-outer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.hex-inner {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+/* Level Indicator with Glow Effect */
+.hex-skill[data-level]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0));
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.hex-skill[data-level]::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(to top, var(--secondary-color), transparent);
+    opacity: 0.3;
+    transition: height 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    filter: blur(8px);
+}
+
+.hex-skill[data-level="70"].animate::after {
+    height: 70%;
+}
+
+.hex-skill[data-level="75"].animate::after {
+    height: 75%;
+}
+
+.hex-skill[data-level="80"].animate::after {
+    height: 80%;
+}
+
+.hex-skill[data-level="85"].animate::after {
+    height: 85%;
+}
+
+.hex-skill[data-level="90"].animate::after {
+    height: 90%;
+}
+
+.hex-skill[data-level="95"].animate::after {
+    height: 95%;
+}
+
+/* Beginner Level (0-50%) */
+.hex-skill[data-level^="0"].animate::after,
+.hex-skill[data-level^="1"].animate::after,
+.hex-skill[data-level^="2"].animate::after,
+.hex-skill[data-level^="3"].animate::after,
+.hex-skill[data-level^="4"].animate::after,
+.hex-skill[data-level="50"].animate::after {
+    background: linear-gradient(to top, #808080, transparent);
+}
+
+/* Proficient Level (51-75%) */
+.hex-skill[data-level^="5"].animate::after,
+.hex-skill[data-level^="6"].animate::after,
+.hex-skill[data-level="70"].animate::after,
+.hex-skill[data-level="75"].animate::after {
+    background: linear-gradient(to top, #1e90ff, transparent);
+}
+
+/* Advanced Level (76-85%) */
+.hex-skill[data-level="76"].animate::after,
+.hex-skill[data-level="77"].animate::after,
+.hex-skill[data-level="78"].animate::after,
+.hex-skill[data-level="79"].animate::after,
+.hex-skill[data-level="80"].animate::after,
+.hex-skill[data-level="81"].animate::after,
+.hex-skill[data-level="82"].animate::after,
+.hex-skill[data-level="83"].animate::after,
+.hex-skill[data-level="84"].animate::after,
+.hex-skill[data-level="85"].animate::after {
+    background: linear-gradient(to top, #9932cc, transparent);
+}
+
+/* Expert Level (86-100%) */
+.hex-skill[data-level="86"].animate::after,
+.hex-skill[data-level="87"].animate::after,
+.hex-skill[data-level="88"].animate::after,
+.hex-skill[data-level="89"].animate::after,
+.hex-skill[data-level="90"].animate::after,
+.hex-skill[data-level="91"].animate::after,
+.hex-skill[data-level="92"].animate::after,
+.hex-skill[data-level="93"].animate::after,
+.hex-skill[data-level="94"].animate::after,
+.hex-skill[data-level="95"].animate::after,
+.hex-skill[data-level="96"].animate::after,
+.hex-skill[data-level="97"].animate::after,
+.hex-skill[data-level="98"].animate::after,
+.hex-skill[data-level="99"].animate::after,
+.hex-skill[data-level="100"].animate::after {
+    background: linear-gradient(to top, var(--secondary-color), transparent);
+}
+
+/* Content Styling */
+.hex-skill i {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.hex-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.skill-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.skill-level {
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    opacity: 0.8;
+}
+
+/* Hover Effects */
+.hex-skill:hover .hex-outer {
+    background: rgba(255, 255, 255, 0.07);
+    transform: translateY(-5px);
+}
+
+.hex-skill:hover .hex-inner {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hex-skill:hover i {
+    transform: scale(1.2);
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Add Connector Lines Between Hexagons */
+.hex-skill::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    top: 50%;
+    right: -30px;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.5s;
+}
+
+.hex-skill.visible::before {
+    opacity: 1;
+}
+
+/* Legend Styling */
+.skill-legend {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.legend-dot.beginner {
+    background-color: #808080;
+}
+
+.legend-dot.proficient {
+    background-color: #1e90ff;
+}
+
+.legend-dot.advanced {
+    background-color: #9932cc;
+}
+
+.legend-dot.expert {
+    background-color: var(--secondary-color);
+}
+
+.legend-text {
+    font-size: 0.8rem;
+    color: var(--accent-color);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 992px) {
+    .hex-grid {
+        gap: 20px;
+    }
+
+    .hex-skill {
+        width: 130px;
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hex-skill {
+        width: 120px;
+        height: 140px;
+    }
+
+    .hex-skill i {
+        font-size: 2rem;
+    }
+
+    .skill-name {
+        font-size: 0.9rem;
+    }
+
+    .skill-level {
+        font-size: 0.7rem;
+    }
+
+    .skill-legend {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .hex-grid {
+        gap: 15px;
+    }
+
+    .hex-skill {
+        width: 100px;
+        height: 115px;
+    }
+
+    .hex-skill i {
+        font-size: 1.7rem;
+        margin-bottom: 8px;
+    }
+
+    .hex-content {
+        gap: 2px;
+    }
+
+    .skill-name {
+        font-size: 0.8rem;
+    }
+
+    .skill-level {
+        font-size: 0.6rem;
+    }
+}

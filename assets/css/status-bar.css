@@ -1,0 +1,142 @@
+/* Status Bar Styles - Icons Only */
+.status-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 12px 30px;
+    position: relative;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.status-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.1) 20%,
+            rgba(255, 255, 255, 0.2) 50%,
+            rgba(255, 255, 255, 0.1) 80%,
+            transparent 100%);
+}
+
+/* Icon Slider */
+.icon-slider-container {
+    width: 90%;
+    max-width: 800px;
+    overflow: hidden;
+    position: relative;
+}
+
+.icon-slider-container::before,
+.icon-slider-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 60px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.icon-slider-container::before {
+    left: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
+}
+
+.icon-slider-container::after {
+    right: 0;
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
+}
+
+.icon-slider {
+    display: flex;
+    animation: slideIcons 20s linear infinite;
+    width: max-content;
+}
+
+.icon-slider:hover {
+    animation-play-state: paused;
+}
+
+@keyframes slideIcons {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.icon-slide {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.icon-slide::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.icon-slide:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.icon-slide:hover::before {
+    opacity: 1;
+}
+
+.icon-slide i {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.icon-slide:hover i {
+    transform: scale(1.2);
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .status-bar {
+        padding: 10px 15px;
+    }
+
+    .icon-slider-container {
+        width: 100%;
+    }
+
+    .icon-slide {
+        width: 40px;
+        height: 40px;
+        margin: 0 15px;
+    }
+
+    .icon-slide i {
+        font-size: 1.3rem;
+    }
+}
