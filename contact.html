@@ -84,84 +84,183 @@
 
     <!-- Contact Section -->
     <section id="contact" class="section">
-        <div class="contact-grid">
-            <!-- Contact Methods -->
-            <div class="contact-methods">
-                <h2>Connect With Me</h2>
-
-                <div class="contact-cards">
-                    <div class="contact-card" data-aos="fade-up">
-                        <div class="contact-icon">
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <div class="contact-info">
-                            <h3>GitHub</h3>
-                            <p>Check out my latest projects and contributions</p>
-                            <a href="https://github.com/ibrayoga0" target="_blank" class="contact-link">ibrayoga0</a>
-                        </div>
-                    </div>
-
-                    <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="contact-icon">
-                            <i class="fab fa-discord"></i>
-                        </div>
-                        <div class="contact-info">
-                            <h3>Discord</h3>
-                            <p>Chat with me directly on Discord</p>
-                            <div class="contact-link discord-username">bangibraheem</div>
-                        </div>
-                    </div>
-
-                    <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="contact-icon">
-                            <i class="fab fa-whatsapp"></i>
-                        </div>
-                        <div class="contact-info">
-                            <h3>WhatsApp</h3>
-                            <p>Direct messaging for quick responses</p>
-                            <a href="https://wa.me/6283142615307" target="_blank" class="contact-link">+62
-                                831-4261-5307</a>
-                        </div>
-                    </div>
-                </div>
+        <div class="container">
+            <!-- Decorative Elements -->
+            <div class="contact-background-elements">
+                <div class="floating-circle circle-1"></div>
+                <div class="floating-circle circle-2"></div>
+                <div class="floating-line line-1"></div>
+                <div class="floating-line line-2"></div>
             </div>
 
-            <!-- Contact Form -->
-            <div class="contact-form-container">
-                <h2>Send Me a Message</h2>
+            <div class="section-title">
+                <!-- <h2>Get In Touch</h2>
+                <div class="title-bar"></div> -->
+            </div>
 
-                <form id="contact-form" class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                        <div class="form-line"></div>
+            <div class="contact-grid">
+                <!-- Contact Methods Section -->
+                <div class="contact-methods">
+                    <div class="methods-header">
+                        <div class="methods-icon">
+                            <i class="fas fa-satellite-dish"></i>
+                        </div>
+                        <h3>Connect With Me</h3>
                     </div>
 
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                        <div class="form-line"></div>
+                    <!-- New Contact Cards Layout -->
+                    <div class="contact-platforms">
+                        <!-- GitHub Card -->
+                        <div class="platform-card" data-platform="github">
+                            <div class="platform-icon">
+                                <div class="icon-wrapper">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                            </div>
+                            <div class="platform-details">
+                                <h4>GitHub</h4>
+                                <div class="platform-value">
+                                    <a href="https://github.com/ibrayoga0" target="_blank">ibrayoga0</a>
+                                    <div class="platform-badge">Portfolio</div>
+                                </div>
+                            </div>
+                            <div class="platform-action">
+                                <a href="https://github.com/ibrayoga0" target="_blank" class="action-button">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Discord Card -->
+                        <div class="platform-card" data-platform="discord">
+                            <div class="platform-icon">
+                                <div class="icon-wrapper">
+                                    <i class="fab fa-discord"></i>
+                                </div>
+                            </div>
+                            <div class="platform-details">
+                                <h4>Discord</h4>
+                                <div class="platform-value">
+                                    <span class="copy-trigger" data-copy="bangibraheem">bangibraheem</span>
+                                    <div class="platform-badge">Chat</div>
+                                </div>
+                            </div>
+                            <div class="platform-action">
+                                <button class="action-button copy-btn" data-copy="bangibraheem">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- WhatsApp Card -->
+                        <div class="platform-card" data-platform="whatsapp">
+                            <div class="platform-icon">
+                                <div class="icon-wrapper">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                            </div>
+                            <div class="platform-details">
+                                <h4>WhatsApp</h4>
+                                <div class="platform-value">
+                                    <a href="https://wa.me/6283142615307" target="_blank">+62 831-4261-5307</a>
+                                    <div class="platform-badge">Message</div>
+                                </div>
+                            </div>
+                            <div class="platform-action">
+                                <a href="https://wa.me/6283142615307" target="_blank" class="action-button">
+                                    <i class="fas fa-comment"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Email Card -->
+                        <div class="platform-card" data-platform="email">
+                            <div class="platform-icon">
+                                <div class="icon-wrapper">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                            </div>
+                            <div class="platform-details">
+                                <h4>Email</h4>
+                                <div class="platform-value">
+                                    <a href="mailto:contact@ibraheem.com">contact@ibraheem.com</a>
+                                    <div class="platform-badge">Business</div>
+                                </div>
+                            </div>
+                            <div class="platform-action">
+                                <a href="mailto:contact@ibraheem.com" class="action-button">
+                                    <i class="fas fa-paper-plane"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" required>
-                        <div class="form-line"></div>
+                    <div class="response-note">
+                        <div class="note-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <p>I typically respond within <span>24 hours</span> on business days.</p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <div class="form-header">
+                        <div class="form-icon">
+                            <i class="fas fa-paper-plane"></i>
+                        </div>
+                        <h3>Send Me a Message</h3>
                     </div>
 
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                        <div class="form-line"></div>
+                    <div class="form-wrapper">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Your Name</label>
+                                    <input type="text" id="name" name="name" required>
+                                    <div class="form-line"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Your Email</label>
+                                    <input type="email" id="email" name="email" required>
+                                    <div class="form-line"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required>
+                                <div class="form-line"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                                <div class="form-line"></div>
+                            </div>
+
+                            <div class="form-footer">
+                                <div class="privacy-note">
+                                    <i class="fas fa-shield-halved"></i>
+                                    <span>Your information is secured and will never be shared.</span>
+                                </div>
+                                <button type="submit" class="submit-button">
+                                    <span>Send Message</span>
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </form>
+
+                        <div class="form-success-message">
+                            <div class="success-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h3>Message Sent!</h3>
+                            <p>Thank you for reaching out. I'll get back to you soon.</p>
+                            <button class="return-button">Send Another Message</button>
+                        </div>
                     </div>
-
-                    <button type="submit" class="cta-button">Send Message</button>
-                </form>
-
-                <div class="form-success-message">
-                    <i class="fas fa-check-circle"></i>
-                    <h3>Message Sent!</h3>
-                    <p>Thank you for reaching out. I'll get back to you soon.</p>
                 </div>
             </div>
         </div>
@@ -224,6 +323,7 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/preloader.js"></script>
     <script src="assets/js/status-bar.js"></script>
+    <script src="assets/js/contact.js"></script>
 </body>
 
 </html>

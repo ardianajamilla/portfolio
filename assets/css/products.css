@@ -4,7 +4,7 @@
 }
 
 .product-category {
-    margin-bottom: 80px;
+    transition: opacity 0.4s ease;
 }
 
 .category-title {
@@ -185,5 +185,108 @@
 
     .cta-content p {
         font-size: 1rem;
+    }
+}
+
+/* Make product cards smaller */
+.product-card {
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.product-image {
+    height: 160px;
+    /* Reduced from 200px */
+    font-size: 3.5rem;
+    /* Reduced icon size */
+}
+
+.product-details {
+    padding: 20px;
+    /* Reduced from 25px */
+}
+
+.product-details h3 {
+    font-size: 1.3rem;
+    /* Reduced from 1.5rem */
+    margin-bottom: 15px;
+    /* Reduced from 20px */
+}
+
+.product-features p {
+    font-size: 0.9rem;
+    /* Slightly smaller text */
+    margin-bottom: 8px;
+    /* Reduced from 10px */
+}
+
+/* Category spacing */
+.product-category {
+    transition: opacity 0.4s ease;
+}
+
+.category-title {
+    margin-bottom: 30px;
+    /* Reduced from 40px */
+    font-size: 1.8rem;
+    /* Reduced from 2.2rem */
+}
+
+/* Filter Buttons */
+.product-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.filter-btn {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--accent-color);
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.filter-btn.active {
+    color: var(--secondary-color);
+    position: relative;
+}
+
+.filter-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 2px;
+    background: var(--secondary-color);
+    border-radius: 1px;
+}
+
+/* Hide categories based on filter */
+.product-category.hidden {
+    display: none;
+}
+
+/* Responsive grid adjustments */
+@media screen and (min-width: 993px) {
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        /* Smaller cards on larger screens */
     }
 }
