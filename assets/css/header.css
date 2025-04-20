@@ -1,4 +1,4 @@
-/* Header Styles */
+/* Enhanced Header Styles */
 #header {
     position: fixed;
     top: 0;
@@ -11,46 +11,99 @@
     padding: 0 5%;
     z-index: 1000;
     transition: all var(--transition-medium);
-    background-color: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(5px);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0) 100%);
+    backdrop-filter: blur(10px);
+}
+
+#header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0.05) 100%);
+    opacity: 0;
+    transition: opacity var(--transition-medium);
 }
 
 #header.scrolled {
-    background-color: rgba(0, 0, 0, 0.9);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    height: 65px;
 }
 
+#header.scrolled::before {
+    opacity: 1;
+}
+
+/* Logo Styling */
 .logo {
     font-family: var(--font-heading);
     font-size: 1.8rem;
     font-weight: 700;
+    position: relative;
+    z-index: 2;
 }
 
 .logo a {
     color: var(--secondary-color);
     position: relative;
     display: inline-block;
+    padding: 5px 0;
+    overflow: hidden;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
-.logo a::after {
+.logo a::before {
     content: '';
     position: absolute;
-    width: 0;
+    width: 100%;
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: var(--secondary-color);
-    transition: width var(--transition-medium);
+    background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
 }
 
-.logo a:hover::after {
-    width: 100%;
+.logo a:hover::before {
+    transform: translateX(100%);
 }
 
-/* Navigation */
+/* Enhanced Navigation */
+nav {
+    position: relative;
+    z-index: 2;
+}
+
 nav ul {
     display: flex;
-    gap: 30px;
+    gap: 40px;
+    position: relative;
+}
+
+nav ul::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -20px;
+    right: -20px;
+    bottom: -10px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.03) 50%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 30px;
+    opacity: 0;
+    transition: opacity var(--transition-medium);
+    z-index: -1;
+}
+
+nav:hover ul::before {
+    opacity: 1;
+}
+
+nav ul li {
+    position: relative;
 }
 
 nav ul li a {
@@ -58,19 +111,22 @@ nav ul li a {
     font-size: 0.9rem;
     font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     position: relative;
-    padding: 5px 0;
+    padding: 8px 0;
+    transition: all var(--transition-medium);
 }
 
+/* Elegant underline effect for nav items */
 nav ul li a::after {
     content: '';
     position: absolute;
     width: 0;
     height: 2px;
     bottom: 0;
-    left: 0;
-    background-color: var(--secondary-color);
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
     transition: width var(--transition-medium);
 }
 
@@ -79,14 +135,49 @@ nav ul li a.active::after {
     width: 100%;
 }
 
-/* Mobile Menu Toggle */
+/* Active and hover states */
+nav ul li a.active {
+    color: #ffffff;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+}
+
+/* Enhanced Mobile Menu Toggle */
 .menu-toggle {
     display: none;
     cursor: pointer;
     font-size: 1.5rem;
+    z-index: 10;
+    position: relative;
+    width: 30px;
+    height: 25px;
 }
 
-/* Mobile Navigation Styles - Will be controlled via device-detection.js */
+.menu-toggle i {
+    transition: all var(--transition-medium);
+}
+
+.menu-toggle.active i.fa-bars {
+    transform: rotate(90deg);
+    opacity: 0;
+}
+
+.menu-toggle.active i.fa-times {
+    opacity: 1;
+}
+
+.menu-toggle i.fa-times {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+/* Enhanced Mobile Navigation Styles */
 @media screen and (max-width: 768px) {
     .menu-toggle {
         display: block;
@@ -96,10 +187,13 @@ nav ul li a.active::after {
         position: fixed;
         top: var(--header-height);
         right: -100%;
-        width: 70%;
+        width: 80%;
         height: calc(100vh - var(--header-height));
-        background-color: rgba(0, 0, 0, 0.95);
+        background: rgba(0, 0, 0, 0.9);
+        backdrop-filter: blur(10px);
         transition: right var(--transition-medium);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+        border-left: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     nav.active {
@@ -112,9 +206,29 @@ nav ul li a.active::after {
         justify-content: center;
         height: 100%;
         gap: 40px;
+        padding: 50px 0;
+    }
+
+    nav ul::before {
+        display: none;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
     }
 
     nav ul li a {
         font-size: 1.2rem;
+        padding: 10px 0;
+        display: block;
+        width: 100%;
+    }
+
+    /* Mobile active state */
+    nav ul li a.active {
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0) 100%);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 }
