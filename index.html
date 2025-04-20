@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/home.css">
 
+    <!-- Preloader Animation-->
+    <link rel="stylesheet" href="assets/css/preloader.css">
+
     <!-- Device Specific Styles (loaded dynamically via JS) -->
     <link rel="stylesheet" id="device-css" href="">
 
@@ -45,20 +48,54 @@
         </div>
     </header>
 
+    <!-- Enhanced Preloader -->
+    <div class="preloader">
+        <div class="preloader-bg"></div>
+        <div class="preloader-smoke-1"></div>
+        <div class="preloader-smoke-2"></div>
+        <div class="loader">
+            <div class="loader-text">
+                <span data-text="I">I</span>
+                <span data-text="b">b</span>
+                <span data-text="r">r</span>
+                <span data-text="a">a</span>
+                <span data-text="h">h</span>
+                <span data-text="e">e</span>
+                <span data-text="e">e</span>
+                <span data-text="m">m</span>
+            </div>
+            <div class="loader-progress-container">
+                <div class="loader-bar">
+                    <div class="loader-progress"></div>
+                </div>
+                <div class="loader-percentage">0%</div>
+            </div>
+        </div>
+        <div class="preloader-particles"></div>
+    </div>
+
     <!-- Hero Section -->
     <section id="home" class="section">
         <div class="hero-content">
             <h1 class="hero-title">
-                <span class="text-animate" style="--i:1">I</span>
-                <span class="text-animate" style="--i:2">b</span>
-                <span class="text-animate" style="--i:3">r</span>
-                <span class="text-animate" style="--i:4">a</span>
-                <span class="text-animate" style="--i:5">h</span>
-                <span class="text-animate" style="--i:6">e</span>
-                <span class="text-animate" style="--i:7">e</span>
-                <span class="text-animate" style="--i:8">m</span>
+                <div class="title-wrapper">
+                    <div class="glitch-wrapper">
+                        <div class="glitch" data-text="Ibraheem">Ibraheem</div>
+                    </div>
+                    <div class="title-shadow"></div>
+                    <div class="title-particles"></div>
+                </div>
             </h1>
-            <p class="hero-subtitle fade-in">Developer • Creator • Innovator</p>
+
+            <div class="hero-subtitle-container">
+                <div class="typing-wrapper">
+                    <p class="hero-subtitle">
+                        <span class="typing-text"></span>
+                        <span class="typing-cursor">|</span>
+                    </p>
+                </div>
+            </div>
+
             <div class="cta-container">
                 <a href="contact.html" class="cta-button">Get In Touch</a>
                 <a href="products.html" class="cta-button outlined">View Products</a>
@@ -130,6 +167,8 @@
     <script src="assets/js/device-detection.js"></script>
     <script src="assets/js/animations.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/preloader.js"></script>
+    <script src="assets/js/hero-animations.js"></script>
 </body>
 
 </html>

@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/about.css">
 
+    <!-- Preloader Animation-->
+    <link rel="stylesheet" href="assets/css/preloader.css">
+
     <!-- Device Specific Styles (loaded dynamically via JS) -->
     <link rel="stylesheet" id="device-css" href="">
 
@@ -43,6 +46,32 @@
             <i class="fas fa-bars"></i>
         </div>
     </header>
+
+    <!-- Enhanced Preloader -->
+    <div class="preloader">
+        <div class="preloader-bg"></div>
+        <div class="preloader-smoke-1"></div>
+        <div class="preloader-smoke-2"></div>
+        <div class="loader">
+            <div class="loader-text">
+                <span data-text="I">I</span>
+                <span data-text="b">b</span>
+                <span data-text="r">r</span>
+                <span data-text="a">a</span>
+                <span data-text="h">h</span>
+                <span data-text="e">e</span>
+                <span data-text="e">e</span>
+                <span data-text="m">m</span>
+            </div>
+            <div class="loader-progress-container">
+                <div class="loader-bar">
+                    <div class="loader-progress"></div>
+                </div>
+                <div class="loader-percentage">0%</div>
+            </div>
+        </div>
+        <div class="preloader-particles"></div>
+    </div>
 
     <!-- Page Title -->
     <div class="page-title">
@@ -226,6 +255,7 @@
     <script src="assets/js/device-detection.js"></script>
     <script src="assets/js/animations.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/preloader.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,8 @@
 // Animation Scripts
 (function () {
+    // Check if page has already loaded
+    let pageLoaded = false;
+
     // Text animation sequence
     function animateText() {
         const textElements = document.querySelectorAll('.text-animate');
@@ -103,17 +106,40 @@
 
     // Initialize all animations
     function initAnimations() {
-        // Start text animation after a short delay
-        setTimeout(animateText, 500);
+        // Start animations after preloader has finished
+        // Check if preloader has been removed
+        const checkPreloader = setInterval(() => {
+            const preloader = document.querySelector('.preloader');
+            if (!preloader || preloader.classList.contains('fade-out')) {
+                clearInterval(checkPreloader);
 
-        // Setup other animations
-        animateOnScroll();
-        setupParallax();
-        enhanceSmoke();
-        animateSkills();
+                // Start text animation after a short delay
+                setTimeout(animateText, 200);
 
-        // Page load animation
-        setTimeout(pageLoadAnimation, 100);
+                // Setup other animations
+                animateOnScroll();
+                setupParallax();
+                enhanceSmoke();
+                animateSkills();
+
+                // Page load animation
+                setTimeout(pageLoadAnimation, 100);
+
+                pageLoaded = true;
+            }
+        }, 100);
+
+        // Fallback - if preloader check takes too long
+        setTimeout(() => {
+            if (!pageLoaded) {
+                animateText();
+                animateOnScroll();
+                setupParallax();
+                enhanceSmoke();
+                animateSkills();
+                pageLoadAnimation();
+            }
+        }, 5000);
     }
 
     // Wait for DOM to be fully loaded
