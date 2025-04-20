@@ -1,0 +1,103 @@
+/* Content Protection Styles - Without Alert Popups */
+
+/* Prevent text selection */
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+div,
+a,
+section {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
+
+/* Allow selection in form inputs only */
+input,
+textarea {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+/* Disable dragging images */
+img,
+svg {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+    pointer-events: none;
+}
+
+/* Security message popup */
+.security-message {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-left: 4px solid var(--secondary-color);
+    padding: 15px 20px;
+    border-radius: 4px;
+    z-index: 9999;
+    display: flex;
+    animation: slideIn 0.3s ease;
+    transition: opacity 0.5s ease;
+}
+
+.security-message.fade-out {
+    opacity: 0;
+}
+
+.security-message-inner {
+    display: flex;
+    align-items: center;
+}
+
+.security-message i {
+    color: var(--secondary-color);
+    font-size: 20px;
+    margin-right: 15px;
+}
+
+.security-message p {
+    color: #fff;
+    margin: 0;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Hidden content shield - adds invisible watermark */
+body::after {
+    content: "Protected by Ibraheem";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    user-select: none;
+    z-index: -1;
+    opacity: 0.005;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><text x="5" y="50" font-family="Arial" font-size="10" fill="white" opacity="0.1">Protected © Ibraheem</text></svg>') repeat;
+}

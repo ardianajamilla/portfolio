@@ -26,6 +26,32 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Security Meta Tags -->
+    <meta name="robots" content="noarchive, noimageindex">
+    <meta name="referrer" content="same-origin">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <!-- Prevent inspection -->
+    <script>
+        // Basic first-line protection
+        document.addEventListener('DOMContentLoaded', function () {
+            document.onkeydown = function (e) {
+                if (e.keyCode == 123 ||
+                    (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74 || e.keyCode == 67)) ||
+                    (e.ctrlKey && e.keyCode == 85)) {
+                    return false;
+                }
+            };
+
+            document.oncontextmenu = function () {
+                return false;
+            };
+        });
+    </script>
+
 </head>
 
 <body>
@@ -123,7 +149,8 @@
                             <strong>Ibraheem</strong> online. My journey with computers began at a very young age,
                             guided by my father who is highly skilled in the world of technology. From those early days,
                             he patiently taught me everything he knew, establishing a foundation that would shape my
-                            future.</p>
+                            future.
+                        </p>
 
                         <p>I developed an intense passion for computing that has only grown stronger over time. I can
                             easily spend hours or even an entire day immersed in front of my computer, completely
@@ -479,6 +506,7 @@
     <script src="assets/js/status-bar.js"></script>
     <script src="assets/js/hex-skills.js"></script>
     <script src="assets/js/about-me-animations.js"></script>
+    <script src="assets/js/security.js"></script>
 </body>
 
 </html>

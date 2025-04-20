@@ -22,6 +22,32 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Security Meta Tags -->
+    <meta name="robots" content="noarchive, noimageindex">
+    <meta name="referrer" content="same-origin">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <!-- Prevent inspection -->
+    <script>
+        // Basic first-line protection
+        document.addEventListener('DOMContentLoaded', function () {
+            document.onkeydown = function (e) {
+                if (e.keyCode == 123 ||
+                    (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74 || e.keyCode == 67)) ||
+                    (e.ctrlKey && e.keyCode == 85)) {
+                    return false;
+                }
+            };
+
+            document.oncontextmenu = function () {
+                return false;
+            };
+        });
+    </script>
+
 </head>
 
 <body>
@@ -324,6 +350,7 @@
     <script src="assets/js/preloader.js"></script>
     <script src="assets/js/status-bar.js"></script>
     <script src="assets/js/contact.js"></script>
+    <script src="assets/js/securty.js"></script>
 </body>
 
 </html>
